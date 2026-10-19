@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fffaf0">
+  <title>AgáPē · Coffee, Soul, Silence</title>
+  <link rel="stylesheet" href="estilos.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip btn" href="#inicio">Saltar al contenido</a>
+  <header>
+    <nav class="nav container" aria-label="Navegación principal">
+      <a class="brand" href="#inicio">AgáPē ✦</a>
+      <div class="nav-links" id="nav-links">
+        <a href="#acerca">Acerca de</a>
+        <a href="#catalogo">Servicios</a>
+        <a href="#horarios">Horarios</a>
+        <a href="#galeria">Galería</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+      <div class="nav-actions">
+        <button id="theme-toggle" class="icon-btn" type="button" aria-label="Activar modo oscuro" aria-pressed="false">☾</button>
+        <a class="icon-btn" href="#pedido" aria-label="Ver carrito">🛒 <span id="cart-count" aria-live="polite">0</span></a>
+        <button id="menu-toggle" type="button" class="icon-btn hamburger" aria-label="Abrir menú" aria-controls="nav-links" aria-expanded="false">☰</button>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-inner container">
+        <p class="greeting" id="greeting"></p>
+        <h1>AgáPē</h1>
+        <p class="tagline">Coffee · Soul · Silence</p>
+        <p class="hero-copy">El aroma del instante perfecto creado con alma,<br>compartido en paz.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#contacto">Reservar una mesa</a>
+          <a class="btn secondary" href="#catalogo">Ver la carta</a>
+        </div>
+      </div>
+      <div class="photo-strip" id="photo-strip" aria-label="Fotos de nuestros sabores"></div>
+    </section>
+    <div class="container">
+      <section id="acerca">
+        <div class="intro-grid">
+          <div>
+            <p class="eyebrow">Un pequeño refugio</p>
+            <h2>Café, calma y algo rico.</h2>
+            <p>Un espacio para frenar, compartir una charla y disfrutar de los detalles. En AgáPē, cada taza invita a vivir el presente.</p>
+            <p class="muted">Explorá nuestra propuesta de pastelería, salados y bebidas. Armá tu pedido o escribinos para reservar un momento especial.</p>
+            <span class="pill">Hecho con alma ♡</span>
+          </div>
+          <aside class="card" id="horarios">
+            <h3>Horarios</h3>
+            <ul class="schedule">
+              <li><span>Lunes a viernes</span><span>08:00 – 20:00</span></li>
+              <li><span>Sábados</span><span>09:00 – 21:00</span></li>
+              <li><span>Domingos</span><span>09:00 – 13:00</span></li>
+            </ul>
+            <p class="notice">Horarios de ejemplo para esta maqueta.</p>
+          </aside>
+        </div>
+        <div class="promo">
+          <div>
+            <p class="eyebrow">Cuenta regresiva de demostración</p>
+            <h3>Un momento para celebrar</h3>
+            <p class="promo-description">48 horas desde tu primera visita en este navegador. No representa una oferta comercial.</p>
+          </div>
+          <div id="promo-clock" class="countdown" role="timer" aria-label="Tiempo restante"></div>
+        </div>
+      </section>
+      <section id="catalogo">
+        <div class="section-head">
+          <p class="eyebrow">Nuestra carta</p>
+          <h2>Elegí tu próximo favorito</h2>
+          <p class="muted">Productos y precios ilustrativos en pesos argentinos.</p>
+        </div>
+        <div class="tools">
+          <div class="filters" role="group" aria-label="Filtrar por categoría">
+            <button class="filter" type="button" data-category="todos" aria-pressed="true">Todos</button>
+            <button class="filter" type="button" data-category="tortas" aria-pressed="false">Tortas y dulces</button>
+            <button class="filter" type="button" data-category="salados" aria-pressed="false">Salados</button>
+            <button class="filter" type="button" data-category="bebidas" aria-pressed="false">Bebidas</button>
+          </div>
+          <div class="search-wrap">
+            <label for="search">Buscá por nombre o descripción</label>
+            <input id="search" type="search" placeholder="Café, tostado, arándanos…" autocomplete="off">
+          </div>
+        </div>
+        <p id="results-count" class="muted" role="status"></p>
+        <div class="products" id="products"></div>
+      </section>
+      <section id="pedido">
+        <div class="section-head">
+          <p class="eyebrow">Tu momento AgáPē</p>
+          <h2>Armá tu pedido</h2>
+          <p class="muted">Descuento de ejemplo: 10% desde 6 unidades y 15% desde 12, sin acumular.</p>
+        </div>
+        <article class="card">
+          <h3>Tu carrito</h3>
+          <ul class="cart-list" id="cart-list" aria-label="Productos del carrito"></ul>
+          <div id="cart-totals" class="totals" aria-live="polite"></div>
+          <div class="cart-actions">
+            <button type="button" class="btn" id="whatsapp">Pedir por WhatsApp ↗</button>
+            <button type="button" class="btn secondary" id="clear-cart">Vaciar carrito</button>
+          </div>
+          <p class="notice" id="whatsapp-note">Demostración: falta configurar el número real de WhatsApp. No se enviará ningún mensaje automáticamente.</p>
+        </article>
+      </section>
+      <section id="galeria">
+        <div class="section-head">
+          <p class="eyebrow">Sabores que inspiran</p>
+          <h2>Una mirada a AgáPē</h2>
+          <p class="muted">Tocá una miniatura para ampliar la foto.</p>
+        </div>
+        <div id="gallery" class="gallery"></div>
+      </section>
+      <section aria-labelledby="testimonials-title">
+        <div class="testimonial card">
+          <p class="eyebrow">Compartí tu experiencia</p>
+          <h2 id="testimonials-title">Pequeños momentos, lindas historias</h2>
+          <p class="notice">Testimonios ficticios para mostrar el carrusel.</p>
+          <div id="testimonial-content"></div>
+          <div class="carousel-controls">
+            <button class="icon-btn" id="prev-testimonial" type="button" aria-label="Testimonio anterior">←</button>
+            <div class="dots" id="testimonial-dots" role="group" aria-label="Elegir testimonio"></div>
+            <button class="icon-btn" id="next-testimonial" type="button" aria-label="Testimonio siguiente">→</button>
+            <button class="icon-btn" id="pause-testimonials" type="button" aria-pressed="false">Pausar</button>
+          </div>
+        </div>
+      </section>
+      <section id="preguntas">
+        <div class="section-head">
+          <p class="eyebrow">Antes de tu visita</p>
+          <h2>Preguntas frecuentes</h2>
+          <p class="muted">Respuestas ilustrativas: confirmá los servicios reales antes de publicar.</p>
+        </div>
+        <div class="faq" id="faq"></div>
+      </section>
+      <section id="contacto">
+        <div class="contact-grid">
+          <div>
+            <p class="eyebrow">Encontrémonos</p>
+            <h2>Reservá tu momento</h2>
+            <p>Contanos cuántas personas vienen, qué día y a qué hora. Este formulario valida los datos, pero no envía reservas.</p>
+            <div class="map-art" role="img" aria-label="Mapa decorativo, no interactivo"><span aria-hidden="true">📍</span></div>
+            <p>📍 Avenida Hudson, 2497</p>
+            <p>J.M.R. Enterprise<br>Instagram: AgáPē.jmr<br>TikTok: AgáPē.jmr</p>
+            <p class="notice">Dirección y nombres tomados del diseño de referencia. Mapa decorativo; ubicación no verificada.</p>
+          </div>
+          <form id="contact-form" class="card" novalidate>
+            <h3>Compartinos tu consulta</h3>
+            <div class="field">
+              <label for="name">Nombre *</label>
+              <input id="name" name="name" autocomplete="name" required maxlength="100" aria-describedby="name-error">
+              <span class="error" id="name-error"></span>
+            </div>
+            <div class="field">
+              <label for="email">Correo electrónico *</label>
+              <input id="email" name="email" type="email" autocomplete="email" required maxlength="254" aria-describedby="email-error">
+              <span class="error" id="email-error"></span>
+            </div>
+            <div class="field">
+              <label for="message">Mensaje *</label>
+              <textarea id="message" name="message" required maxlength="2000" placeholder="Quiero reservar una mesa para…" aria-describedby="message-error"></textarea>
+              <span class="error" id="message-error"></span>
+            </div>
+            <button class="btn" type="submit">Validar consulta</button>
+            <div class="form-status" id="form-status" role="status" hidden></div>
+            <p class="notice">Los campos con * son obligatorios. No guardamos estos datos en el navegador.</p>
+          </form>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer>
+    <div class="container">
+      <p class="brand">AgáPē</p>
+      <p>Coffee · Soul · Silence</p>
+      <p>© <span id="year"></span> AgáPē · Proyecto web educativo.</p>
+      <p class="notice">Catálogo, precios, descuentos, horarios y testimonios de ejemplo.</p>
+      <p id="storage-warning" class="notice" hidden>El almacenamiento local no está disponible. Los cambios se conservarán solo durante esta visita.</p>
+    </div>
+  </footer>
+  <button type="button" id="back-top" class="back-top" aria-label="Volver arriba" hidden>↑</button>
+  <div id="toast" class="toast" role="status" hidden></div>
+  <dialog id="image-dialog" aria-labelledby="image-title">
+    <div class="modal-top">
+      <h3 id="image-title">Galería</h3>
+      <button type="button" id="close-dialog" class="icon-btn" aria-label="Cerrar imagen">✕</button>
+    </div>
+    <img id="large-photo" class="large-photo" alt="">
+  </dialog>
+</body>
+</html>
